@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"
+             type="text/css"
+             href="style.css" />
+
+        <style>
+            label 
+            {
+                padding: 10px 10px 10px 10px;
+                margin: 5px 5px 5px 5px;
+            }
+        </style>
+
+        <title>Ellipse Form</title>
+    </head>
+
+    <body>
+        <div class="image_container">
+            <img class="center rounded-corners" src="images/nebula.jpg" width="600" height="400"/> 
+            <div class="centered_text"><h1 style="color:#FFFFFF">Super Ellipse Drawer 5000</h1></div>
+        </div>
+        <div id="main_contents" class="center">
+            <form action="ellipse.html" method="get">
+                    <fieldset>
+                        <label for="semiMajorAxis" class="center">Semi Major Axis</label>
+                        <input type="text" class="center" name="semiMajorAxis" value="0" /> <br>
+                        <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
+                        <input type="text" class="center" name="semiMinorAxis" value="0"/> <br>
+                        <button class="center" type="submit" value="submit" style="padding: 10px 10px 10px 10px; margin-bottom: 10px;">
+                            Submit
+                        </button>
+                    </fieldset>
+            </form>
+        </div>
+
+    </body>
+</html>
