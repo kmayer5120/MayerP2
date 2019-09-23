@@ -64,9 +64,6 @@ h5
 h1, h2, h3, h4, h5, h6
 {
     color: #E48B47;
-    border-bottom: solid;
-    border-bottom-color: #ffffff;
-    border-bottom-right-radius: 30px;
     font-weight: bolder;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
     padding-left: 16px;
@@ -265,6 +262,16 @@ li a:hover
 
 #submit_button
 {
-    
+    background:  #082049;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode';
+    padding: 10px 10px 10px 10px; 
+    margin-bottom: 10px;
+}
+
+#instructions
+{
+    font-size: 24px;
 }
 

@@ -27,7 +27,7 @@ function drawEllipse(centerX, centerY, width, height) {
         centerX - width / 2, centerY - height / 2, // C4
         centerX, centerY - height / 2); // A1
 
-    context.fillStyle = "red";
+    context.fillStyle = "white";
     context.fill();
     context.closePath();
 }

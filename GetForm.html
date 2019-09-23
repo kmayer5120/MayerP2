@@ -8,31 +8,50 @@
         <style>
             label 
             {
-                padding: 10px 10px 10px 10px;
-                margin: 5px 5px 5px 5px;
+                padding: 5px 10px 5px 10px;
+                margin: 0px 5px 0px 5px;
+                font-size: 24px;
+            }
+            input[type=number]
+            {
+                font-size: 24px;
             }
         </style>
 
-        <title>Ellipse Form</title>
+        <title>Ellipse Parameters</title>
     </head>
 
     <body>
-        <div class="image_container">
-            <img class="center rounded-corners" src="images/nebula.jpg" width="600" height="400"/> 
-            <div class="centered_text"><h1 style="color:#FFFFFF">Super Ellipse Drawer 5000</h1></div>
-        </div>
-        <div id="main_contents" class="center">
-            <form action="ellipse.html" method="get">
-                    <fieldset>
-                        <label for="semiMajorAxis" class="center">Semi Major Axis</label>
-                        <input type="text" class="center" name="semiMajorAxis" value="0" /> <br>
-                        <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
-                        <input type="text" class="center" name="semiMinorAxis" value="0"/> <br>
-                        <button class="center" type="submit" value="submit" style="padding: 10px 10px 10px 10px; margin-bottom: 10px;">
-                            Submit
-                        </button>
-                    </fieldset>
-            </form>
+        <header>Ellipse Builder</header>
+        <div class="container">
+            <div class="sidebar_left">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="image_container">
+                <img class="center rounded-corners" src="images/nebula.jpg" width="600" height="150"/> 
+                <div class="centered_text"><h1 style="color:#FFFFFF">Parameters</h1></div>
+            </div>
+
+            <div id="main_contents" class="center">
+                <form action="Response.html" method="get">
+                        <fieldset>
+                            <p class="center" style="font-size: 20px;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
+                            <label for="semiMajorAxis" class="center">Semi Major Axis</label>
+                            <input type="text" class="center" name="semiMajorAxis" value="0" type="number" required/> <br>
+                            <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
+                            <input type="text" class="center" name="semiMinorAxis" value="0" type="number" required/> <br>
+                            <button class="center" id="submit_button" type="submit" value="submit">
+                                Submit
+                            </button>
+                        </fieldset>
+                </form>
+            </div>
+
         </div>
 
     </body>

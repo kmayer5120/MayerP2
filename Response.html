@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"
+             type="text/css"
+             href="style.css" />
+        <script src='EllipseDrawingFunction.js'></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <header>Result</header>
+        <div id="container">
+            <div class="sidebar_left">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="GetForm.html">Ellipse Builder</a>
+                        </li>
+                    </ul>
+            </div> 
+
+            <div class="image_container">
+                <img class="center rounded-corners" src="images/nebula.jpg" width="600" height="150"/> 
+                <div class="centered_text"><h1 style="color:#FFFFFF">Your Ellipse</h1></div>
+            </div>
+
+            <div id="main_contents" class="center">
+                <span id="querystring" hidden></span>
+                <p class="center" id="semi_major_axis"></p>
+                <p class="center" id="semi_minor_axis"></p>
+
+                <canvas id="ellipse" class="center" width="600" height="600"></canvas> 
+
+                <script>
+                    document.getElementById("querystring").innerText = window.location.href;
+                
+                    //function found at https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+                    function getParameterByName(name, url) {
+                        if (!url) url = window.location.href;
+                        name = name.replace(/[\[\]]/g, "\\$&");
+                        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                            results = regex.exec(url);
+                        if (!results) return null;
+                        if (!results[2]) return '';
+                        return decodeURIComponent(results[2].replace(/\+/g, " "));
+                    }
+
+                    //get width and height of canvas so we can dynamically position the ellipse
+                    var width = $("canvas").attr("width") / 2;
+                    var height = $("canvas").attr("height") / 2;
+
+
+                    //get parameters from submitted form
+                    var semiMajorAxis = parseInt(getParameterByName("semiMajorAxis"));
+                    var semiMinorAxis = parseInt(getParameterByName("semiMinorAxis"));
+
+                    //display parameters in p tags to user
+                    $("#semi_major_axis").append("Semi-Major Axis: " + semiMajorAxis);
+                    $("#semi_minor_axis").append("Semi-Minor Axis: " + semiMinorAxis);
+
+                    //Params: x pos, y pos, semi-major axis, semi-minor axis
+                    drawEllipse(width, height, semiMajorAxis, semiMinorAxis);
+                </script>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
