@@ -6,16 +6,30 @@
              href="style.css" />
 
         <style>
-            label 
-            {
+            label {
                 padding: 5px 10px 5px 10px;
                 margin: 0px 5px 0px 5px;
-                font-size: 24px;
+                font-size: 32px;
             }
-            input[type=number]
+            
+            input {
+                /* the next two lines of css remove the up and down arrows from input element */
+                -webkit-appearance: none; /* for Chrome */
+                -moz-appearance: textfield; /* for Firefox */
+                width: 100%;
+                padding: 10px 20px;
+                margin: 10px 0;
+                font-size: 32px;
+                box-sizing: border-box;
+                border-radius: 20px;
+            }
+
+            form
             {
-                font-size: 24px;
+                border-radius: 25px;
+                background: #212121;
             }
+
         </style>
 
         <title>Ellipse Parameters</title>
@@ -42,11 +56,11 @@
                     <fieldset>
                         <p class="center" id="instructions" style="font-size: 20px;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
                         <label for="semiMajorAxis" class="center">Semi Major Axis</label>
-                        <input type="text" class="center" name="semiMajorAxis" value="0" type="number" required/> <br>
+                        <input type="number" class="center input" name="semiMajorAxis" value="500" type="number" required/> <br>
                         <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
-                        <input type="text" class="center" name="semiMinorAxis" value="0" type="number" required/> <br>
-                        <button class="center" id="submit_button" type="submit" value="submit">
-                            Submit
+                        <input type="number" class="center" name="semiMinorAxis" value="200" type="number" required/> <br>
+                        <button class="center" id="submit_button" type="submit" value="submit" style="font-weight: bolder; font-size: 32px; border-radius: 20px;">
+                            SUBMIT
                         </button>
                     </fieldset>
                 </form>

@@ -2,295 +2,259 @@
 *   Name:       Kyle Mayer
 *   File:       index.html
 *   Program:    Program 2
-*   Purpose:    Design a web page that informs user about the purpose of a website.
+*   Purpose:    Design a web page that can pass parameters between html pages to draw an ellipse
 *   Date:       9/10/2019
 */
 
-* 
-{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-body
-{
-    background-color: rgb(24, 24, 24);
-    height: 100%;
-    width: 100%;
+body {
+  background-color: rgb(24, 24, 24);
+  height: 100%;
+  width: 100%;
 }
 
-header 
-{
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
-    text-align: center;
-    position: relative;
-    top: 0px;
-    height: 48px;
-    font-size: 36px;
-    color: #ffffff;
-    background-color: #082049;
-    border-bottom: #5173A5;
-    border-bottom-style: solid;
+header {
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+  text-align: center;
+  position: relative;
+  top: 0px;
+  height: 48px;
+  font-size: 36px;
+  color: #ffffff;
+  background-color: #082049;
+  border-bottom: #5173a5;
+  border-bottom-style: solid;
 }
 
-
-
-h1
-{
-    font-size: 64px;
+h1 {
+  font-size: 64px;
 }
 
-h2
-{
-    font-size: 56px;
+h2 {
+  font-size: 56px;
 }
 
-h3
-{
-    font-size: 48px;
+h3 {
+  font-size: 48px;
 }
 
-h4
-{
-    font-size: 32px;
+h4 {
+  font-size: 32px;
 }
 
-h5
-{
-    font-size: 16px;
+h5 {
+  font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6
-{
-    color: #E48B47;
-    font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
-    padding-left: 16px;
-    padding-top: 32px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #e48b47;
+  font-weight: bolder;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+  padding-left: 16px;
+  padding-top: 32px;
 }
 
-footer
-{
-    text-align: center;
-    background-color: rgb(24, 24, 24);
-    color: #ebebeb;
-    padding: 8px;
-    font-size: 16px;
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
+footer {
+  text-align: center;
+  background-color: rgb(24, 24, 24);
+  color: #ebebeb;
+  padding: 8px;
+  font-size: 16px;
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
 }
 
-aside
-{
-    float: right;
-    padding: 8px;
-    margin: 32px;
-    background-color: #ebebeb;
-    color: #082049;
+aside {
+  float: right;
+  padding: 8px;
+  margin: 32px;
+  background-color: #ebebeb;
+  color: #082049;
 }
 
-img 
-{
-    margin: 16px;
-    display: block; 
-    border: #A4251A;
-    border-style:solid;
-    border-width: 2px;
-    object-fit: fill;
-}
-        
-p 
-{
-    border: #082049;
-    color: #ffffff;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    font-family: 'Agency FB';
+img {
+  margin: 16px;
+  display: block;
+  border: #a4251a;
+  border-style: solid;
+  border-width: 2px;
+  object-fit: fill;
 }
 
-label
-{
-    border: #082049;
-    color: #ffffff;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    font-family: 'Agency FB';
+p {
+  border: #082049;
+  color: #ffffff;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-family: "Agency FB";
 }
 
-
-a
-{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+label {
+  border: #082049;
+  color: #ffffff;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-family: "Agency FB";
 }
 
-a:link 
-{
-    /* unvisited link */
-    color: #E48B47;
+a {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
 }
 
-a:active 
-{
-    /* selected link */
-    color: #A4251A;
+a:link {
+  /* unvisited link */
+  color: #e48b47;
 }
 
-a:visited
-{
-    /* visited link */
-    color: #ebebeb;
+a:active {
+  /* selected link */
+  color: #a4251a;
 }
 
-a:hover 
-{
-    /* mouse over link */
-    color: #E16628;
+a:visited {
+  /* visited link */
+  color: #ebebeb;
 }
 
-ul 
-{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-    top: 0px;
-    height: 28px;
-    width: 100%;
-    overflow: auto;
-    background-color: #333;
+a:hover {
+  /* mouse over link */
+  color: #e16628;
 }
 
-li
-{
-    border-right: 1px solid #bbb;
-    display: inline-block;
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 0px;
+  height: 28px;
+  width: 100%;
+  overflow: auto;
+  background-color: #333;
 }
 
-li a 
-{
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    padding: 4px 20px;
-    text-decoration: none;
+li {
+  border-right: 1px solid #bbb;
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding: 4px 20px;
+  text-decoration: none;
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover 
-{
-    background-color: #111;
+li a:hover {
+  background-color: #111;
 }
 
 /* classes */
-.center
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
-.side_nav li ul
-{
-    margin-left: auto;
+.side_nav li ul {
+  margin-left: auto;
 }
 
-.rounded-corners
-{
-    border-radius: 30px;
+.rounded-corners {
+  border-radius: 30px;
 }
 
-.active 
-{
-    background-color:#E16628;
+.active {
+  background-color: #e16628;
 }
 
-.image_container 
-{
+.image_container {
   position: relative;
   text-align: center;
   color: white;
 }
 
-.box
-{
-    position: relative;
-    display: inline-block; /* Make the width of box same as image */
+.box {
+  position: relative;
+  display: inline-block; /* Make the width of box same as image */
 }
 
-.box .box_text
-{
-    position: absolute;
-    z-index: 999;
-    margin: 0 auto;
-    left: 0;
-    right: 0;        
-    text-align: center;
-    top: 20%;
-    background: rgba(0, 0, 0, 0.8);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
-    color: #fff;
-    width: 40%; /* Set the width of the positioned div */
+.box .box_text {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  top: 33%;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+  color: #fff;
+  width: 50%; /* Set the width of the positioned div */
 }
-
 
 /* ids */
-#container
-{
-    display: flex;
-    width: 100%;
-    overflow: hidden;
+#container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
 }
 
-#main_content 
-{
-    background-color: rgb(24, 24, 24);
-    border: #5173A5;
-    border-style: solid;
-    font-size: 20px;
-    color: #092149;
-    width: 80%;
+#main_content {
+  background-color: rgb(24, 24, 24);
+  border: #5173a5;
+  border-style: solid;
+  font-size: 20px;
+  color: #092149;
+  width: 80%;
 }
 
-#sidebar_right
-{
-    float: left;
-    font-size: 16px;
-    width: 10%;
-    border: #5173A5;
-    border-bottom: #111;
-    border-bottom-style: solid;
+#sidebar_right {
+  float: left;
+  font-size: 16px;
+  width: 10%;
+  border: #5173a5;
+  border-bottom: #111;
+  border-bottom-style: solid;
 }
 
-#sidebar_left
-{
-    float: left;
-    font-size: 16px;
-    width: 10%;
-    border: #5173A5;
-    border-bottom: #111;
-    border-bottom-style: solid;
+#sidebar_left {
+  float: left;
+  font-size: 16px;
+  width: 10%;
+  border: #5173a5;
+  border-bottom: #111;
+  border-bottom-style: solid;
 }
 
-#submit_button
-{
-    background:  #082049;
-    color: #FFFFFF;
-    font-size: 24px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode';
-    padding: 10px 10px 10px 10px; 
-    margin-bottom: 10px;
+#submit_button {
+  background: #082049;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
 }
 
-#instructions
-{
-    font-size: 24px;
+#instructions {
+  font-size: 24px;
 }
-
