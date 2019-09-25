@@ -23,36 +23,35 @@
 
     <body>
         <header>Ellipse Builder</header>
-        <div class="container">
-            <div class="sidebar_left">
+
+        <nav>
+            <div>
                 <ul>
                     <li>
                         <a href="index.html">Home</a>
                     </li>
+                    <li>
+                        <a href="GetForm.html" class="active">Ellipse Builder</a>
+                    </li>
                 </ul>
             </div>
-            
-            <div class="image_container">
-                <img class="center rounded-corners" src="images/nebula.jpg" width="600" height="150"/> 
-                <div class="centered_text"><h1 style="color:#FFFFFF">Parameters</h1></div>
-            </div>
-
+        </nav>
+        <div class="container">
             <div id="main_contents" class="center">
                 <form action="Response.html" method="get">
-                        <fieldset>
-                            <p class="center" style="font-size: 20px;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
-                            <label for="semiMajorAxis" class="center">Semi Major Axis</label>
-                            <input type="text" class="center" name="semiMajorAxis" value="0" type="number" required/> <br>
-                            <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
-                            <input type="text" class="center" name="semiMinorAxis" value="0" type="number" required/> <br>
-                            <button class="center" id="submit_button" type="submit" value="submit">
-                                Submit
-                            </button>
-                        </fieldset>
+                    <fieldset>
+                        <p class="center" id="instructions" style="font-size: 20px;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
+                        <label for="semiMajorAxis" class="center">Semi Major Axis</label>
+                        <input type="text" class="center" name="semiMajorAxis" value="0" type="number" required/> <br>
+                        <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
+                        <input type="text" class="center" name="semiMinorAxis" value="0" type="number" required/> <br>
+                        <button class="center" id="submit_button" type="submit" value="submit">
+                            Submit
+                        </button>
+                    </fieldset>
                 </form>
             </div>
-
         </div>
-
+        <footer>Kyle Mayer | Program 2: Ellipse Generator | kmayer1@cnm.edu</footer>
     </body>
 </html>

@@ -197,6 +197,11 @@ li a:hover
     width: 50%;
 }
 
+.side_nav li ul
+{
+    margin-left: auto;
+}
+
 .rounded-corners
 {
     border-radius: 30px;
@@ -214,13 +219,27 @@ li a:hover
   color: white;
 }
 
-.centered_text 
+.box
 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
 }
+
+.box .box_text
+{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;        
+    text-align: center;
+    top: 20%;
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    color: #fff;
+    width: 40%; /* Set the width of the positioned div */
+}
+
 
 /* ids */
 #container

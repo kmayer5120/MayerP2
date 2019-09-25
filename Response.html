@@ -6,30 +6,31 @@
              href="style.css" />
         <script src='EllipseDrawingFunction.js'></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <style>
+            
+        </style>
     </head>
     <body>
         <header>Result</header>
         <div id="container">
-            <div class="sidebar_left">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="GetForm.html">Ellipse Builder</a>
-                    </li>
-                </ul>
-            </div> 
-
-            <div class="image_container">
-                <img class="center rounded-corners" src="images/nebula.jpg" width="600" height="150"/> 
-                <div class="centered_text"><h1 style="color:#FFFFFF">Your Ellipse</h1></div>
+            <nav>
+                <div class="sidebar_left">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="GetForm.html">Ellipse Builder</a>
+                        </li>
+                    </ul>
+                </div> 
+            </nav>
+            <div class="center"><h1 style="color:#FFFFFF; font-weight: bold">Your Ellipse</h1></div>
             </div>
-
             <div id="main_contents" class="center">
                 <span id="querystring" hidden></span>
-                <p class="center" id="semi_major_axis"></p>
-                <p class="center" id="semi_minor_axis"></p>
+                <p class="center" id="semi_major_axis" style="padding: 5 5 5 5"></p>
+                <p class="center" id="semi_minor_axis" style="padding: 5 5 5 5"></p>
 
                 <canvas id="ellipse" class="center" width="600" height="600"></canvas> 
 
@@ -63,10 +64,8 @@
                     //Params: x pos, y pos, semi-major axis, semi-minor axis
                     drawEllipse(width, height, semiMajorAxis, semiMinorAxis);
                 </script>
-
             </div>
-
         </div>
-
+        <footer>Kyle Mayer | Program 2: Ellipse Generator | kmayer1@cnm.edu</footer>
     </body>
 </html>
