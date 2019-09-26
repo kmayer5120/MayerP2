@@ -17,6 +17,8 @@
                 -webkit-appearance: none; /* for Chrome */
                 -moz-appearance: textfield; /* for Firefox */
                 width: 100%;
+                border-color: #222222;
+                border-style: solid;
                 padding: 10px 20px;
                 margin: 10px 0;
                 font-size: 32px;
@@ -31,7 +33,6 @@
             }
 
         </style>
-
         <title>Ellipse Parameters</title>
     </head>
 
@@ -51,13 +52,14 @@
             </div>
         </nav>
         <div class="container">
-            <div id="main_contents" class="center">
+
+            <div id="main_content" class="center">
                 <form action="Response.html" method="get">
                     <fieldset>
-                        <p class="center" id="instructions" style="font-size: 20px;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
-                        <label for="semiMajorAxis" class="center">Semi Major Axis</label>
+                        <p class="center" id="instructions" style="font-size: 20px; font-weight: bolder; color:#e16628;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
+                        <label for="semiMajorAxis" class="center">Semi-Major Axis (width)</label>
                         <input type="number" class="center input" name="semiMajorAxis" value="500" type="number" required/> <br>
-                        <label for="semiMinorAxis"class="center">Semi Minor Axis</label>
+                        <label for="semiMinorAxis"class="center">Semi-Minor Axis (height)</label>
                         <input type="number" class="center" name="semiMinorAxis" value="200" type="number" required/> <br>
                         <button class="center" id="submit_button" type="submit" value="submit" style="font-weight: bolder; font-size: 32px; border-radius: 20px;">
                             SUBMIT

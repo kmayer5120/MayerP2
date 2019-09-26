@@ -1,71 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet"
-             type="text/css"
-             href="style.css" />
-        <script src='EllipseDrawingFunction.js'></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-        <style>
-            
-        </style>
-    </head>
-    <body>
-        <header>Result</header>
-        <div id="container">
-            <nav>
-                <div class="sidebar_left">
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="GetForm.html">Ellipse Builder</a>
-                        </li>
-                    </ul>
-                </div> 
-            </nav>
-            <div class="center"><h1 style="color:#FFFFFF; font-weight: bold">Your Ellipse</h1></div>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src='EllipseDrawingFunction.js'></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>Result</header>
+    <div id="container">
+        <nav>
+            <div class="sidebar_left">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="GetForm.html">Ellipse Builder</a>
+                    </li>
+                </ul>
             </div>
-            <div id="main_contents" class="center">
-                <span id="querystring" hidden></span>
-                <p class="center" id="semi_major_axis" style="padding: 5 5 5 5"></p>
-                <p class="center" id="semi_minor_axis" style="padding: 5 5 5 5"></p>
-
-                <canvas id="ellipse" class="center" width="600" height="600"></canvas> 
-
-                <script>
-                    document.getElementById("querystring").innerText = window.location.href;
-                
-                    //function found at https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
-                    function getParameterByName(name, url) {
-                        if (!url) url = window.location.href;
-                        name = name.replace(/[\[\]]/g, "\\$&");
-                        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                            results = regex.exec(url);
-                        if (!results) return null;
-                        if (!results[2]) return '';
-                        return decodeURIComponent(results[2].replace(/\+/g, " "));
-                    }
-
-                    //get width and height of canvas so we can dynamically position the ellipse
-                    var width = $("canvas").attr("width") / 2;
-                    var height = $("canvas").attr("height") / 2;
-
-
-                    //get parameters from submitted form
-                    var semiMajorAxis = parseInt(getParameterByName("semiMajorAxis"));
-                    var semiMinorAxis = parseInt(getParameterByName("semiMinorAxis"));
-
-                    //display parameters in p tags to user
-                    $("#semi_major_axis").append("Semi-Major Axis: " + semiMajorAxis);
-                    $("#semi_minor_axis").append("Semi-Minor Axis: " + semiMinorAxis);
-
-                    //Params: x pos, y pos, semi-major axis, semi-minor axis
-                    drawEllipse(width, height, semiMajorAxis, semiMinorAxis);
-                </script>
-            </div>
+        </nav>
+        <div class="center">
+            <h2 style="color:#FFFFFF; font-weight: bold">Your Ellipse</h2>
         </div>
-        <footer>Kyle Mayer | Program 2: Ellipse Generator | kmayer1@cnm.edu</footer>
-    </body>
+    </div>
+    <div id="main_content" class="center">
+        <span id="querystring" hidden></span>
+        <p class="center" id="semi_major_axis" style="padding: 5 5 5 5"></p>
+        <p class="center" id="semi_minor_axis" style="padding: 5 5 5 5"></p>
+
+        <canvas id="ellipse" class="center" width="1000" height="1000"></canvas>
+
+        <button class="center" id="new_ellipse_button" onclick="window.location.href = 'GetForm.html'">NEW ELLIPSE</button>
+
+        <script>
+            document.getElementById("querystring").innerText = window.location.href;
+
+            //function found at https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            var scaleFactor = 3;
+            var newWidth = semiMajorAxis * scaleFactor;
+            var newHeight = semiMinorAxis * scaleFactor;
+            $("#ellipse").width(newWidth).height(newHeight);
+
+            //get width and height of canvas so we can dynamically center the ellipse
+            var width = $("canvas").attr("width") / 2;
+            var height = $("canvas").attr("height") / 2;
+
+
+            //get parameters from submitted form
+            var semiMajorAxis = parseInt(getParameterByName("semiMajorAxis"));
+            var semiMinorAxis = parseInt(getParameterByName("semiMinorAxis"));
+
+            //display parameters in p tags to user
+            $("#semi_major_axis").append("Semi-Major Axis: " + semiMajorAxis);
+            $("#semi_minor_axis").append("Semi-Minor Axis: " + semiMinorAxis);
+
+            //Params: x pos, y pos, semi-major axis, semi-minor axis
+            drawEllipse(width, height, semiMajorAxis, semiMinorAxis);
+        </script>
+    </div>
+    </div>
+    <footer>Kyle Mayer | Program 2: Ellipse Generator | kmayer1@cnm.edu</footer>
+</body>
+
 </html>
