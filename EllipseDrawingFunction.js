@@ -8,9 +8,17 @@
 
 
 //Source for function: http://www.williammalone.com/briefs/how-to-draw-ellipse-html5-canvas/
+//I, Kyle Mayer, modified this function to allow for scaling.
 function drawEllipse(centerX, centerY, width, height) {
     var canvas = document.getElementById('ellipse');
     var context = canvas.getContext('2d')
+    let scaleFactor = 1.25;
+
+    if(width > canvas.width || height > canvas.height)
+    {
+        canvas.width += (width * scaleFactor);
+        canvas.height += (height * scaleFactor);
+    }
 
     context.beginPath();
 

@@ -12,34 +12,52 @@
 
 <body>
     <header>Result</header>
-    <div id="container">
-        <nav>
-            <div class="sidebar_left">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="GetForm.html">Ellipse Builder</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="center">
-            <h2 style="color:#FFFFFF; font-weight: bold">Your Ellipse</h2>
+    <nav>
+        <div>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="GetForm.html">Ellipse Builder</a>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <div id="container">
+           <div  style="background: #333333;">
+                <p style="font-size: 18px; color:#FFFFFF; font-weight: bold;">Information about ellipses:</p>
+                <p>
+                    <a href="https://en.wikipedia.org/wiki/Ellipse" target="_blank">Wikipedia</a>
+                </p>
+                <p>
+                    <a href="https://www.mathwarehouse.com/ellipse/equation-of-ellipse.php" target="_blank">Ellipse formula</a>
+                </p>
+                <p>
+                    <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:conics/x9e81a4f98389efdf:ellipse-center-radii/v/ellipse-standard-equation-from-graph" target="_blank">
+                        Khan Academy
+                    </a>
+                </p>
+           </div>
+
+
+
+        <div id="main_content" class="center">
+            <span id="querystring" hidden></span>
+            <p class="center" id="semi_major_axis" style="padding: 5 5 5 5"></p>
+            <p class="center" id="semi_minor_axis" style="padding: 5 5 5 5"></p>
+
+            <canvas id="ellipse" class="center" width="1000" height="1000"></canvas>
+
+            <button class="center" id="new_ellipse_button" onclick="window.location.href = 'GetForm.html'">NEW ELLIPSE</button>
+        </div>
+
     </div>
-    <div id="main_content" class="center">
-        <span id="querystring" hidden></span>
-        <p class="center" id="semi_major_axis" style="padding: 5 5 5 5"></p>
-        <p class="center" id="semi_minor_axis" style="padding: 5 5 5 5"></p>
-
-        <canvas id="ellipse" class="center" width="1000" height="1000"></canvas>
-
-        <button class="center" id="new_ellipse_button" onclick="window.location.href = 'GetForm.html'">NEW ELLIPSE</button>
 
         <script>
             document.getElementById("querystring").innerText = window.location.href;
+            let canvas = document.getElementById("ellipse");
+            let scaleFactor = 2.0;
 
             //function found at https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
             function getParameterByName(name, url) {
@@ -52,29 +70,27 @@
                 return decodeURIComponent(results[2].replace(/\+/g, " "));
             }
 
-            var scaleFactor = 3;
-            var newWidth = semiMajorAxis * scaleFactor;
-            var newHeight = semiMinorAxis * scaleFactor;
-            $("#ellipse").width(newWidth).height(newHeight);
-
-            //get width and height of canvas so we can dynamically center the ellipse
-            var width = $("canvas").attr("width") / 2;
-            var height = $("canvas").attr("height") / 2;
-
+            //divide width and height of canvas by 2 so we can dynamically center the ellipse
+            let width = canvas.width / 2.0;
+            let height = canvas.height / 2.0;
 
             //get parameters from submitted form
-            var semiMajorAxis = parseInt(getParameterByName("semiMajorAxis"));
-            var semiMinorAxis = parseInt(getParameterByName("semiMinorAxis"));
+            let semiMajorAxis = parseInt(getParameterByName("semiMajorAxis"));
+            let semiMinorAxis = parseInt(getParameterByName("semiMinorAxis"));
 
             //display parameters in p tags to user
             $("#semi_major_axis").append("Semi-Major Axis: " + semiMajorAxis);
             $("#semi_minor_axis").append("Semi-Minor Axis: " + semiMinorAxis);
 
+            if(semiMajorAxis > canvas.width || semiMinorAxis > canvas.height)
+            {
+                semiMajorAxis /= scaleFactor;
+                semiMinorAxis /= scaleFactor;
+                
+            }
             //Params: x pos, y pos, semi-major axis, semi-minor axis
             drawEllipse(width, height, semiMajorAxis, semiMinorAxis);
         </script>
-    </div>
-    </div>
     <footer>Kyle Mayer | Program 2: Ellipse Generator | kmayer1@cnm.edu</footer>
 </body>
 

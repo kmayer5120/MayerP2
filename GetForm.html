@@ -51,21 +51,37 @@
                 </ul>
             </div>
         </nav>
-        <div class="container">
-
-            <div id="main_content" class="center">
-                <form action="Response.html" method="get">
+        <div id="container">
+           <div style="background: #333333;">
+                <p style="font-size: 18px; color:#FFFFFF; font-weight: bold;">Information about ellipses:</p>
+                <p>
+                    <a href="https://en.wikipedia.org/wiki/Ellipse" target="_blank">Wikipedia</a>
+                </p>
+                <p>
+                    <a href="https://www.mathwarehouse.com/ellipse/equation-of-ellipse.php" target="_blank">Ellipse formula</a>
+                </p>
+                <p>
+                    <a href="https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:conics/x9e81a4f98389efdf:ellipse-center-radii/v/ellipse-standard-equation-from-graph" target="_blank">
+                        Khan Academy
+                    </a>
+                </p>
+           </div> 
+            <div class="box" id="main_content">
+                <form action="Response.html" method="get" class="center" style="padding: 20px 20px 20px 20px;">
                     <fieldset>
                         <p class="center" id="instructions" style="font-size: 20px; font-weight: bolder; color:#e16628;">Enter your ellipse parameters to draw an ellipse to your desired size.</p>
                         <label for="semiMajorAxis" class="center">Semi-Major Axis (width)</label>
-                        <input type="number" class="center input" name="semiMajorAxis" value="500" type="number" required/> <br>
+                        <input type="number" class="center input" name="semiMajorAxis" value="500" type="number" max="2000" min="0" required/> <br>
                         <label for="semiMinorAxis"class="center">Semi-Minor Axis (height)</label>
-                        <input type="number" class="center" name="semiMinorAxis" value="200" type="number" required/> <br>
+                        <input type="number" class="center" name="semiMinorAxis" value="200" type="number" max="2000" min="0" required/> <br>
                         <button class="center" id="submit_button" type="submit" value="submit" style="font-weight: bolder; font-size: 32px; border-radius: 20px;">
                             SUBMIT
                         </button>
                     </fieldset>
                 </form>
+            </div>
+            <div>
+                <img src="images/satellite.jpg" height="150" width="250" class="rounded-corners">
             </div>
         </div>
         <footer>Kyle Mayer | Program 2: Ellipse Generator | kmayer1@cnm.edu</footer>
