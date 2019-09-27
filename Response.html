@@ -1,3 +1,12 @@
+<!--
+Name:       Kyle Mayer
+File:       Response.html
+Program:    Program 2
+Purpose:    Design a web page that can pass parameters between html pages to draw an ellipse
+Date:       9/15/2019
+-->
+
+
 <!DOCTYPE html>
 <html>
 
@@ -53,7 +62,6 @@
         </div>
 
     </div>
-
         <script>
             document.getElementById("querystring").innerText = window.location.href;
             let canvas = document.getElementById("ellipse");
@@ -82,12 +90,11 @@
             $("#semi_major_axis").append("Semi-Major Axis: " + semiMajorAxis);
             $("#semi_minor_axis").append("Semi-Minor Axis: " + semiMinorAxis);
 
-            if(semiMajorAxis > canvas.width || semiMinorAxis > canvas.height)
-            {
-                semiMajorAxis /= scaleFactor;
-                semiMinorAxis /= scaleFactor;
-                
-            }
+            //if(semiMajorAxis > canvas.width || semiMinorAxis > canvas.height)
+            //{
+            //    semiMajorAxis /= scaleFactor;
+            //    semiMinorAxis /= scaleFactor;
+            //}
             //Params: x pos, y pos, semi-major axis, semi-minor axis
             drawEllipse(width, height, semiMajorAxis, semiMinorAxis);
         </script>

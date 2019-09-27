@@ -2,8 +2,8 @@
  *   Name:       Kyle Mayer
  *   File:       EllipseDrawingFunction.js
  *   Program:    Program 2
- *   Purpose:    Design a web page that informs user about the purpose of a website.
- *   Date:       9/10/2019
+ *   Purpose:    Design a web page that can pass parameters between html pages to draw an ellipse
+ *   Date:       9/15/2019
  */
 
 
@@ -11,7 +11,7 @@
 //I, Kyle Mayer, modified this function to allow for scaling.
 function drawEllipse(centerX, centerY, width, height) {
     var canvas = document.getElementById('ellipse');
-    var context = canvas.getContext('2d')
+    var context = canvas.getContext('2d');
     let scaleFactor = 1.25;
 
     if(width > canvas.width || height > canvas.height)
